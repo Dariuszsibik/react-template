@@ -15,7 +15,7 @@
         "test": "jest",
         "test:watch": "jest --watchAll=true",
         "test:coverage": "rm -rf coverage && jest --coverage && open coverage/lcov-report/index.html",
-        "postinstall": "is-ci || husky install"
+        "postinstall": "[ -d '.husky' ] && husky install || true"
     },
     "dependencies": {
         "react": "^18.2.0",
