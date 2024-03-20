@@ -1,0 +1,16 @@
+name: Release
+'on':
+    push:
+        branches:
+            - master
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: yarn install
+            - run: yarn lint
+            - run: yarn prettier
+            - run: yarn tsc
+            - run: yarn test
+            - run: yarn build

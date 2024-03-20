@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "dist",
+        "target": "ESNext",
+        "module": "esnext",
+        "types": ["node", "jest"],
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "jsx": "react",
+        "moduleResolution": "node",
+        "allowJs": false,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": false,
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+        "noFallthroughCasesInSwitch": true,
+        "downlevelIteration": true,
+        "noImplicitAny": true,
+        "paths": {
+            "@Components": ["src/shared/components"],
+            "@Shared": ["src/shared/shared"],
+            "@Core": ["src/core"],
+            "@Constants": ["src/constants/"],
+        }
+    },
+    "include": ["src/", "index.d.ts"],
+    "exclude": ["node_modules/", "dist/", "coverage/"]
+}
