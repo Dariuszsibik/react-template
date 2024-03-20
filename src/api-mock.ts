@@ -320,44 +320,4 @@ export const users = [
                 "title": "Account Executive"
             },
         },
-        {
-            "id": 13,
-            "firstName": "Trace",
-            "lastName": "Douglas",
-            "maidenName": "Lemke",
-            "age": 26,
-            "gender": "male",
-            "email": "lgribbinc@posterous.com",
-            "phone": "+1 609 937 3468",
-            "username": "lgribbinc",
-            "password": "ftGj8LZTtv9g",
-            "birthDate": "1967-07-23",
-            "image": "https://robohash.org/Trace.png?set=set4",
-            "ip": "163.245.232.27",
-            "address": {
-                "address": "87 Horseshoe Drive",
-                "city": "West Windsor",
-                "coordinates": {
-                    "lat": 43.4731793,
-                    "lng": -72.4967532
-                },
-                "postalCode": "05037",
-                "state": "VT"
-            },
-            "company": {
-                "address": {
-                    "address": "310 Timrod Road",
-                    "city": "Manchester",
-                    "coordinates": {
-                        "lat": 41.756758,
-                        "lng": -72.493501
-                    },
-                    "postalCode": "06040",
-                    "state": "CT"
-                },
-                "department": "Research and Development",
-                "name": "Casper Inc",
-                "title": "Sales Associate"
-            },
-        },
     ];
