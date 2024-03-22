@@ -16,7 +16,7 @@ export const useUserList = () => {
     };
 
     useEffect(() => {
-        getUserList(gender).then((data) => setUsers(data.users));
+        getUserList().then((data) => setUsers(data.users));
     }, [gender]);
 
     return {

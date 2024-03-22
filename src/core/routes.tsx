@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { ProfileResponseType } from '@Models';
 
-import Home from '../pages/Home';
-import LogIn from '../pages/LogIn';
-import NotFound from '../pages/NotFound';
-import Settings from '../pages/Settings';
-import UserDetails from '../pages/UserDetails';
-import UserProfile from '../pages/UserProfile';
-import Users from '../pages/Users';
 import { ProtectedRoute, SuspenseLayout } from './components';
+
+const Home = lazy(() => import(/* webpackChunkName: "pages/home"*/ '../pages/Home'));
+const LogIn = lazy(() => import(/* webpackChunkName: "pages/LogIn"*/ '../pages/LogIn'));
+const NotFound = lazy(() => import(/* webpackChunkName: "pages/NotFound"*/ '../pages/NotFound'));
+const Settings = lazy(() => import(/* webpackChunkName: "pages/Settings"*/ '../pages/Settings'));
+const UserDetails = lazy(() => import(/* webpackChunkName: "pages/UserDetails"*/ '../pages/UserDetails'));
+const UserProfile = lazy(() => import(/* webpackChunkName: "pages/UserProfile"*/ '../pages/UserProfile'));
+const Users = lazy(() => import(/* webpackChunkName: "pages/Users"*/ '../pages/Users'));
 
 export const AppRoutes = () => {
     const [user, setUser] = useState<ProfileResponseType | null>(null);

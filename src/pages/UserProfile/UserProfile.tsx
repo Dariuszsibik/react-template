@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
+import { useUserProfile } from './hooks';
+
 export const UserProfile = () => {
-    const user = {
-        firstName: 'Dariusz',
-    };
+    const { user } = useUserProfile();
 
     return (
         <>
             <div>{user && user.firstName}</div>
-
-            <div>firstName</div>
 
             <Link to="Details">Show details</Link>
 
