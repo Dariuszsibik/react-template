@@ -8,6 +8,7 @@ import LogIn from '../pages/LogIn';
 import NotFound from '../pages/NotFound';
 import Settings from '../pages/Settings';
 import UserDetails from '../pages/UserDetails';
+import UserProfile from '../pages/UserProfile';
 import Users from '../pages/Users';
 import { ProtectedRoute, SuspenseLayout } from './components';
 
@@ -26,7 +27,7 @@ export const AppRoutes = () => {
                     <Route path="/settings" element={<Settings />} />
                     <Route path="/users" element={<Users />}>
                         <Route path="/users" element={<div>Select a user</div>} />
-                        <Route path=":id" element={<Users />}>
+                        <Route path=":id" element={<UserProfile />}>
                             <Route path="details" element={<UserDetails />} />
                         </Route>
                     </Route>

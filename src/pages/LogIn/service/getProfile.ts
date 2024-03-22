@@ -2,7 +2,7 @@ import { config } from '@Core';
 import { HTTPMethod, ProfileResponseType } from '@Models';
 
 export const getProfile = (email: string, password: string): Promise<ProfileResponseType> => {
-    return fetch(config.app.apiLoginUrl as string, {
+    return fetch(`${config.app.apiLoginUrl}`, {
         method: HTTPMethod.Post,
         headers: {
             'Content-type': 'application/json',
