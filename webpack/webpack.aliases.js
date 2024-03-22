@@ -6,4 +6,5 @@ module.exports = {
     '@Shared': path.resolve(__dirname, '../src/shared'),
     '@Core': path.resolve(__dirname, '../src/core'),
     '@Constants': path.resolve(__dirname, '../src/constants'),
+    "@Models": path.resolve(__dirname, '../src/models'),
 };

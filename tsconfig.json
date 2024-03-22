@@ -24,9 +24,10 @@
         "noImplicitAny": true,
         "paths": {
             "@Components": ["src/shared/components"],
-            "@Shared": ["src/shared/shared"],
+            "@Shared": ["src/shared"],
             "@Core": ["src/core"],
             "@Constants": ["src/constants/"],
+            "@Models": ["src/models"]
         }
     },
     "include": ["src/", "index.d.ts"],
