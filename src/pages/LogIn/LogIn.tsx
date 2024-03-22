@@ -1,9 +1,15 @@
-import React, { FormEventHandler, useState } from 'react';
+import React, { Dispatch, FormEventHandler, SetStateAction, useState } from 'react';
+
+import { ProfileResponseType } from '@Models';
 
 import { LoginForm } from './components/Form.tsx';
 import { getProfile } from './service';
 
-export const LogIn = () => {
+type LogInProps = {
+    onLogIn: Dispatch<SetStateAction<ProfileResponseType | null>>;
+};
+
+export const LogIn = ({ onLogIn }: LogInProps) => {
     const [error, setError] = useState<string | null>(null);
 
     const handleLogIn: FormEventHandler<HTMLFormElement> = (event) => {
@@ -13,12 +19,10 @@ export const LogIn = () => {
         const password = event.currentTarget.password.value;
 
         getProfile(email, password)
-            .then((data) => data)
+            .then((data) => onLogIn(data))
             .catch((e) => {
-                setError(e);
+                setError(e.message);
             });
-
-        // TODO - here you need to add a function that will moved user to global  scope
     };
 
     return <LoginForm logIn={handleLogIn} error={error} />;

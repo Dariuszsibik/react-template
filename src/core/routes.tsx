@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import { ProfileResponseType } from '@Models';
 
 import Home from '../pages/Home';
 import LogIn from '../pages/LogIn';
@@ -10,14 +12,16 @@ import Users from '../pages/Users';
 import { ProtectedRoute, SuspenseLayout } from './components';
 
 export const AppRoutes = () => {
+    const [user, setUser] = useState<ProfileResponseType | null>(null);
+
     return (
         <Routes>
             <Route element={<SuspenseLayout />}>
-                <Route element={<ProtectedRoute isAllowed={true} redirectedPath={'/'} />}>
-                    <Route path="/login" element={<LogIn />} />
+                <Route element={<ProtectedRoute isAllowed={!user} redirectedPath={'/'} />}>
+                    <Route path="/login" element={<LogIn onLogIn={setUser} />} />
                 </Route>
 
-                <Route element={<ProtectedRoute isAllowed={false} redirectedPath={'/login'} />}>
+                <Route element={<ProtectedRoute isAllowed={!!user} redirectedPath={'/login'} />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="/users" element={<Users />}>
