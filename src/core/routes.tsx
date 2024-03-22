@@ -13,11 +13,11 @@ export const AppRoutes = () => {
     return (
         <Routes>
             <Route element={<SuspenseLayout />}>
-                <Route element={<ProtectedRoute isAllowed={false} redirectedPath={'/'} />}>
+                <Route element={<ProtectedRoute isAllowed={true} redirectedPath={'/'} />}>
                     <Route path="/login" element={<LogIn />} />
                 </Route>
 
-                <Route element={<ProtectedRoute isAllowed={true} redirectedPath={'/login'} />}>
+                <Route element={<ProtectedRoute isAllowed={false} redirectedPath={'/login'} />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="/users" element={<Users />}>
